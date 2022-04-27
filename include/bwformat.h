@@ -18,9 +18,6 @@
 #define BW_FORMAT
 
 #include <version>
-#include <iostream>
-#include <string_view>
-#include <cstdio>
 
 #ifdef __cpp_lib_format
 #   error "use the std format lib"
