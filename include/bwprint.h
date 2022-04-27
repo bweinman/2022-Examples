@@ -2,7 +2,7 @@
 // Copyright (c) 2021-22 BHG LLC
 // This code is free and open source without restriction
 // Please include attribution above
-// updated 2022-04-21
+// updated 2022-04-27
 //
 // This code requires either the C++20 <format> library,
 // or the libfmt library from <https://fmt.dev/>
@@ -21,7 +21,6 @@
 #ifndef BW_PRINT
 #define BW_PRINT
 
-#include <version>
 #include <iostream>
 #include <string_view>
 #include <cstdio>
@@ -41,7 +40,7 @@ namespace BWP_NAMESPACE {
     using std::vformat;
     using std::make_format_args;
 
-    constexpr const char * bwp_version = "1.0.16";
+    constexpr const char * bwp_version = "1.0.17";
 
     // default to stdout
     // print(string_view format-string, args...)
