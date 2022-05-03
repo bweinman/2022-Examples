@@ -1,14 +1,12 @@
 //  formatter.cpp
-//  as of 2022-04-27 bw [bw.org]
+//  as of 2022-05-03 bw [bw.org]
 
 #include <format>
 #include <print>
-#include <vector>
 #include <numbers>
 
 using std::print;
 using std::string_view;
-using std::vector;
 using std::numbers::pi;
 
 template<typename T>
