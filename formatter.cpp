@@ -3,6 +3,7 @@
 
 #include <format>
 #include <print>
+#include <string_view>
 #include <numbers>
 
 using std::print;
