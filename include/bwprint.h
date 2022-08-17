@@ -2,7 +2,7 @@
 // Copyright (c) 2021-22 BHG LLC
 // This code is free and open source without restriction
 // Please include attribution above
-// updated 2022-04-27
+// updated 2022-08-16
 //
 // This code requires either the C++20 <format> library,
 // or the libfmt library from <https://fmt.dev/>
@@ -45,39 +45,39 @@ namespace BWP_NAMESPACE {
     // default to stdout
     // print(string_view format-string, args...)
     template<typename... Args>
-    constexpr void print(const std::string_view str_fmt, Args&&... args) {
+    constexpr void print(const std::string_view& str_fmt, Args&&... args) {
         fputs(vformat(str_fmt, make_format_args(args...)).c_str(), stdout);
     }
 
     // send to FILE*
     // print(FILE*, string_view format-string, args...)
     template<typename... Args>
-    constexpr void print(FILE* fdest, const std::string_view str_fmt, Args&&... args) {
+    constexpr void print(FILE* fdest, const std::string_view& str_fmt, Args&&... args) {
         fputs(vformat(str_fmt, make_format_args(args...)).c_str(), fdest);
     }
 
     // send to ostream
     // print(ostream, string_view format-string, args...)
     template<typename... Args>
-    constexpr void print(std::ostream & ostream_dest, const std::string_view str_fmt, Args&&... args) {
+    constexpr void print(std::ostream& ostream_dest, const std::string_view& str_fmt, Args&&... args) {
         ostream_dest << vformat(str_fmt, make_format_args(args...));
     }
 
-    // no parameter stack cstr
+    // no parameter pack cstr
     // print(const char * str)
     void print(const char* str) {
         fputs(str, stdout);
     }
 
-    // no parameter stack string_view
+    // no parameter pack string_view
     // print(const string & str)
-    void print(const std::string_view & str) {
+    void print(const std::string_view& str) {
         fputs(str.data(), stdout);
     }
 
-    // no parameter stack string
+    // no parameter pack string
     // print(const string & str)
-    void print(const std::string & str) {
+    void print(const std::string& str) {
         fputs(str.c_str(), stdout);
     }
 }
